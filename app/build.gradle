@@ -1,0 +1,33 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.integratedbiometrics.ibsimplescan"
+        minSdk 14
+        targetSdk 33
+        versionCode 38
+        versionName "4.0.0.0"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation project(path: ':IBScanCommon')
+    implementation project(path: ':IBScanUltimate')
+    implementation 'androidx.legacy:legacy-support-core-utils:1.0.0'
+}
